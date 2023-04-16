@@ -1,5 +1,4 @@
 function y = butterworth_filter_EDA(signal,lowF,highF,Fs)
-
 Fstop1 = lowF-0.1;     % First Stopband Frequency
 Fpass1 = lowF;     % First Passband Frequency
 Fpass2 = highF;    % Second Passband Frequency
@@ -9,7 +8,6 @@ Apass  = 1;     % Passband Ripple (dB)
 Astop2 = 40;    % Second Stopband Attenuation (dB)
 match  = 'stopband';
  % Sampling Frequency
-
 h  = fdesign.bandpass(Fstop1, Fpass1, Fpass2, Fstop2, Astop1, Apass, ...
                       Astop2, Fs);
 Hd = design(h, 'butter', 'MatchExactly', match);
